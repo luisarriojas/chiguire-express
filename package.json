@@ -1,0 +1,25 @@
+{
+    "name": "chiguire-express",
+    "version": "1.0.0",
+    "author": {
+        "name": "Luis Enrique Arriojas",
+        "url": "http://linkedin.com/in/luisarriojas"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/luisarriojas/chiguire-express.git"
+    },
+    "private": true,
+    "scripts": {
+        "start": "sudo NODE_PORT=80 supervisor app"
+    },
+    "dependencies": {
+        "express": "4.1.0",
+        "compression": "1.0.1",
+        "cookie-parser": "1.0.1",
+        "express-session": "1.0.3",
+        "connect-redis": "2.0.0",
+        "mongodb": "1.4.2"
+    }
+}
