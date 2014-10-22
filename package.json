@@ -1,6 +1,6 @@
 {
     "name": "chiguire-express",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "author": {
         "name": "Luis Enrique Arriojas",
         "url": "http://linkedin.com/in/luisarriojas"
@@ -12,14 +12,25 @@
     },
     "private": true,
     "scripts": {
-        "start": "sudo NODE_PORT=80 supervisor app"
+        "start": "supervisor app.js"
+    },
+    "engines": {
+        "node": "0.10.x"
     },
     "dependencies": {
+        "supervisor": "0.6.x",
         "express": "4.1.0",
         "compression": "1.0.1",
         "cookie-parser": "1.0.1",
         "express-session": "1.0.3",
         "connect-redis": "2.0.0",
-        "mongodb": "1.4.2"
-    }
+        "mongodb": "1.4.2",
+        "passport": "0.2.1",
+        "passport-facebook": "1.0.3"
+    },
+    "keywords": [
+        "node",
+        "heroku",
+        "express"
+    ]
 }

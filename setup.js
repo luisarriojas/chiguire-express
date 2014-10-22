@@ -1,4 +1,4 @@
-<!--
+/*
 chiguire-express
 Copyright (c) 2014 Luis Enrique Arriojas
 http://opensource.org/licenses/MIT
@@ -13,31 +13,31 @@ http://opensource.org/licenses/MIT
 You're reading. I want to work for you.
 https://www.linkedin.com/in/luisarriojas
 
--->
+*/
 
-<!doctype html>
-<html ng-app="dpApp" ng-controller="dpCtrl">
+var setup = {
+    mongodb: {
+        user: '',
+        password: '',
+        host: '',
+        port: '',
+        database: ''
+    },
+    redis: {
+        host: '',
+        port: 123,
+        pass: '',
+        ttl: 57600
+    },
+    session: {
+        cookieParserSecret: '',
+        expressSessionSecret: ''
+    },
+    passport: {
+        clientID: '',
+        clientSecret: '',
+        callbackURL: ''
+    }
+}
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{dpMeta.description}}">
-    <title ng-bind-template="{{dpMeta.title}} - Dark Project"></title>
-
-    <!--my css and js-->
-    <link href="css/dp.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-
-    <!--AngularJS-->
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
-    <script src="js/angular-app.js"></script>
-    <script src="js/angular-ctrl.js"></script>
-</head>
-
-<body>
-    {{ indexContent }}
-    <div ng-view></div>
-</body>
-
-</html>
+module.exports = setup;
