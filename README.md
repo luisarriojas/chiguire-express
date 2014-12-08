@@ -5,14 +5,15 @@ chiguire-express
 
 **Dependencies**
 * supervisor 0.6.x
-* express 4.1.0
-* compression 1.0.1
-* cookie-parser 1.0.1
-* express-session 1.0.3
-* connect-redis 2.0.0
-* mongodb 1.4.2
-* passport 0.2.1
-* passport-facebook 1.0.3
+* express 4.1.x
+* compression 1.0.x
+* cookie-parser 1.0.x
+* express-session 1.0.x
+* body-parser 1.9.x
+* connect-redis 2.0.x
+* mongodb 1.4.x
+* passport 0.2.x
+* passport-facebook 1.0.x
 
 **System requirements**
 * MongoDB server

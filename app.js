@@ -14,14 +14,19 @@ You're reading. I want to work for you.
 https://www.linkedin.com/in/luisarriojas
 
 */
-
-var setup = require('./setup.js');
+var environment = 'dev';
+var setup = require('./setup.js')(environment);
 
 //add mongodb
+if (environment == 'production') {
+    var mongoURL = "mongodb://" + setup.mongodb.user + ":" + setup.mongodb.password + "@" + setup.mongodb.host + ":" + setup.mongodb.port + "/" + setup.mongodb.database;
+} else {
+    var mongoURL = "mongodb://" + setup.mongodb.host + ":" + setup.mongodb.port + "/" + setup.mongodb.database;
+};
 var mongodb = require("mongodb").MongoClient;
-mongodb.connect("mongodb://" + setup.mongodb.user + ":" + setup.mongodb.password + "@" + setup.mongodb.host + ":" + setup.mongodb.port + "/" + setup.mongodb.database, {}, function(err, db) {
+mongodb.connect(mongoURL, {}, function(err, db) {
     if (err) throw err;
-    
+
     //add passport
     var passport = require('passport');
     var FacebookStrategy = require('passport-facebook').Strategy;
@@ -42,7 +47,7 @@ mongodb.connect("mongodb://" + setup.mongodb.user + ":" + setup.mongodb.password
             });
         }
     ));
-    
+
     //create express app
     var http = require('http');
     var express = require('express');
@@ -68,15 +73,22 @@ mongodb.connect("mongodb://" + setup.mongodb.user + ":" + setup.mongodb.password
             ttl: setup.redis.ttl
         })
     }));
-    
+
+    //body-parser
+    var bodyParser = require('body-parser');
+    app.use(bodyParser.json()); // to support JSON-encoded bodies
+    app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
+        extended: false
+    }));
+
     app.use(passport.initialize());
     app.use(passport.session());
-    
+
     //static views
     app.use(express.static('./static'));
 
     //routing
-    var router = require('./router/router')(app, db, passport);
+    var router = require('./router/router')(app, db);
 
     //404 error handler
     app.use(function(req, res) {
