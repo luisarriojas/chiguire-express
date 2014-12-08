@@ -31,13 +31,13 @@ module.exports = function(environment) {
                 ttl: 57600
             },
             session: {
-                cookieParserSecret: 'R0#NIljEi!B$7rb3yCO8mjc46eY8hqVCQoctftb%Vy*9ziLqomt1mXasUYNzzS*M',
-                expressSessionSecret: 'qWR9&YWhP86aB%I&oosUNVsaf^cmyBEIZ1pCUfSWXvIaUBYEbHXBIhulGDh9WLTm'
+                cookieParserSecret: '',
+                expressSessionSecret: ''
             },
             passport: {
                 clientID: '',
                 clientSecret: '',
-                callbackURL: ''
+                callbackURL: 'https://afternoon-sands-4604.herokuapp.com/loginCallback' //Path of FB's callback URL.
             }
         }
     } else {

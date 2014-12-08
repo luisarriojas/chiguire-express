@@ -14,7 +14,7 @@ You're reading. I want to work for you.
 https://www.linkedin.com/in/luisarriojas
 
 */
-var environment = 'dev';
+var environment = 'production';
 var setup = require('./setup.js')(environment);
 
 //add mongodb

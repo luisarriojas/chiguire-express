@@ -21,10 +21,6 @@ module.exports = function(app, db, passport) {
     //----------------------------------------
 
 
-
-
-
-
     //routes for passport
     app.get('/login',
         passport.authenticate('facebook'));
@@ -36,7 +32,7 @@ module.exports = function(app, db, passport) {
         }));
 
     app.get('/loginSuccess', function(req, res) {
-        //check if the user exists in DB and create a custom session if the project requires it.
+        //user's data is mount in req.session automatically.
         res.send("Facebook ID: " + req.session.passport.user.id);
     });
 
@@ -45,7 +41,6 @@ module.exports = function(app, db, passport) {
         res.send("facebook failure");
     });
     //----------------------------------------
-
 
 
     //routes just for testing
