@@ -88,7 +88,7 @@ mongodb.connect(mongoURL, {}, function(err, db) {
     app.use(express.static('./static'));
 
     //routing
-    var router = require('./router/router')(app, db);
+    var router = require('./router/router')(app, db, passport);
 
     //404 error handler
     app.use(function(req, res) {

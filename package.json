@@ -26,8 +26,8 @@
         "connect-redis": "2.0.x",
         "mongodb": "1.4.x",
         "body-parser": "1.9.x",
-        "passport": "0.2.1",
-        "passport-facebook": "1.0.3"
+        "passport": "0.2.x",
+        "passport-facebook": "1.0.x"
     },
     "keywords": [
         "node",

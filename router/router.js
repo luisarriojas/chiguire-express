@@ -14,7 +14,7 @@ You're reading. I want to work for you.
 https://www.linkedin.com/in/luisarriojas
 
 */
-module.exports = function(app, db) {
+module.exports = function(app, db, passport) {
     //How to read GET and POST variables
     //GET -> req.query.name
     //POST -> req.body.name

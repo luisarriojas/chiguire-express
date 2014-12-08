@@ -58,9 +58,9 @@ module.exports = function(environment) {
                 expressSessionSecret: 'uXNkT45QgILnzUd5d8f$Kygy1VGukM8FDbw8#X2o1Qe$tTTad%QoLfb0vI4oSgVp'
             },
             passport: {
-                clientID: '',
-                clientSecret: '',
-                callbackURL: ''
+                clientID: '759947280759983',
+                clientSecret: 'e007fae8fd65dc87a555fb7f4839dae9',
+                callbackURL: 'https://afternoon-sands-4604.herokuapp.com/loginCallback'
             }
         }
     }
